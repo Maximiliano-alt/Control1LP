@@ -7,17 +7,15 @@ stat:   expr NEWLINE                # printExpr
     |   NEWLINE                     # blank
     ;
 
-expr:   expr op=('*'|'/') expr      # MulDiv
-    |   expr op=('+'|'-') expr      # AddSub
+expr:   expr op=('encendido'|'apagado')    # EncApa
     |   INT                         # int
-    |   ID                          # id
+    |   COMA
     |   '(' expr ')'                # parens
     ;
 
-MUL :   '*' ; // assigns token name to '*' used above in grammar
-DIV :   '/' ;
-ADD :   '+' ;
-SUB :   '-' ;
+COMA :   ',' ; // assigns token name to '*' used above in grammar
+ENC :   'encendido' ;
+APAG :   'apagado' ;
 ID  :   [a-zA-Z]+ ;      // match identifiers
 INT :   [0-9]+ ;         // match integers
 NEWLINE:'\r'? '\n' ;     // return newlines to parser (is end-statement signal)
