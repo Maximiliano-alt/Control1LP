@@ -4,12 +4,14 @@ from antlr4.InputStream import InputStream
 from PrimeraParteLexer import PrimeraParteLexer
 from PrimeraParteParser import PrimeraParteParser
 from MyVisitor import MyVisitor
+from turtle import *
 
 if __name__ == '__main__':
     while (True):
         if len(sys.argv) > 1:
             input_stream = FileStream(sys.argv[1])
         else:
+            print("Ingrese coordenadas (x,y,encendido|apagado):")
             input_stream = InputStream(sys.stdin.readline())
         lexer = PrimeraParteLexer(input_stream)
         token_stream = CommonTokenStream(lexer)

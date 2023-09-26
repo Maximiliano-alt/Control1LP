@@ -1,5 +1,6 @@
 from PrimeraParteVisitor import PrimeraParteVisitor
 from PrimeraParteParser import PrimeraParteParser
+from turtle import *
 
 class MyVisitor(PrimeraParteVisitor):
     def __init__(self):
@@ -17,6 +18,12 @@ class MyVisitor(PrimeraParteVisitor):
         coordX = int(self.visit(ctx.puntero(0)))
         coordY = int(self.visit(ctx.puntero(1)))
         if ctx.op.type == PrimeraParteParser.ENC:
-            return coordX
-        return coordY
+            pendown()
+            goto(coordX,coordY)
+            return 0
+        penup()
+        goto(coordX,coordY)
+        return 0
+    
+        
     
