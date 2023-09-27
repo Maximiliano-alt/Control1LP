@@ -17,12 +17,13 @@ class MyVisitor(PrimeraParteVisitor):
     def visitPos(self, ctx):
         coordX = int(self.visit(ctx.puntero(0)))
         coordY = int(self.visit(ctx.puntero(1)))
+        hideturtle()
         if ctx.op.type == PrimeraParteParser.ENC:
             pendown()
-            goto(coordX,coordY)
+            setpos(coordX,coordY)
             return 0
         penup()
-        goto(coordX,coordY)
+        setpos(coordX,coordY)
         return 0
     
         
