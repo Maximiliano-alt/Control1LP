@@ -5,10 +5,16 @@ ENC=4
 APAG=5
 MOV=6
 <<<<<<< HEAD
+<<<<<<< HEAD
 ROT=7
 INT=8
 NEWLINE=9
 WS=10
+=======
+INT=7
+NEWLINE=8
+WS=9
+>>>>>>> 7483039019a702f260c0e1e044ebd4ebb7e8ccaf
 =======
 INT=7
 NEWLINE=8
@@ -21,6 +27,9 @@ WS=9
 'apagado'=5
 'mover'=6
 <<<<<<< HEAD
+<<<<<<< HEAD
 'rotar'=7
+=======
+>>>>>>> 7483039019a702f260c0e1e044ebd4ebb7e8ccaf
 =======
 >>>>>>> 7483039019a702f260c0e1e044ebd4ebb7e8ccaf

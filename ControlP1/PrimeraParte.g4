@@ -9,9 +9,15 @@ dibujo:   modo NEWLINE                                            # Mod
 
 modo: op=('encendido'|'apagado')                                  # AsignMod
 <<<<<<< HEAD
+<<<<<<< HEAD
     ;                                 
 
 puntero: op=('mover'|'rotar')'(' puntero (',' puntero)? ')'       # Pos
+=======
+    ;  
+
+puntero: MOV '(' puntero ',' puntero ')'                          # Pos
+>>>>>>> 7483039019a702f260c0e1e044ebd4ebb7e8ccaf
 =======
     ;  
 
@@ -24,7 +30,10 @@ ENC :     'encendido' ;
 APAG :    'apagado' ;
 MOV:      'mover' ;
 <<<<<<< HEAD
+<<<<<<< HEAD
 ROT:      'rotar' ;
+=======
+>>>>>>> 7483039019a702f260c0e1e044ebd4ebb7e8ccaf
 =======
 >>>>>>> 7483039019a702f260c0e1e044ebd4ebb7e8ccaf
 INT :   [0-9]+ ;

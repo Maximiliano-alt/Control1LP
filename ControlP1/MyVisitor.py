@@ -10,11 +10,14 @@ class MyVisitor(PrimeraParteVisitor):
         value = self.visit(ctx.modo())
         print(value)
         return 0
+<<<<<<< HEAD
     
     def visitMod(self, ctx):
         value = self.visit(ctx.modo())
         print(value)
         return 0
+=======
+>>>>>>> 7483039019a702f260c0e1e044ebd4ebb7e8ccaf
     
     def visitDib(self, ctx):
         value = self.visit(ctx.puntero())
@@ -31,6 +34,7 @@ class MyVisitor(PrimeraParteVisitor):
         else:
             penup()
             return 0
+<<<<<<< HEAD
     
     def visitAsignMod(self, ctx):
         if ctx.op.type == PrimeraParteParser.ENC:
@@ -39,6 +43,8 @@ class MyVisitor(PrimeraParteVisitor):
         else:
             penup()
             return 0
+=======
+>>>>>>> 7483039019a702f260c0e1e044ebd4ebb7e8ccaf
     
     def visitPos(self, ctx):
         coordX = int(self.visit(ctx.puntero(0)))

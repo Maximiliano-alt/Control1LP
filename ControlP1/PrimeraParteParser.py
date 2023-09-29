@@ -11,6 +11,7 @@ else:
 def serializedATN():
     return [
 <<<<<<< HEAD
+<<<<<<< HEAD
         4,1,10,37,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,1,0,4,0,10,8,0,11,0,12,
         0,11,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3,1,21,8,1,1,2,1,2,1,3,1,3,1,3,
         1,3,1,3,3,3,30,8,3,1,3,1,3,1,3,3,3,35,8,3,1,3,0,0,4,0,2,4,6,0,2,
@@ -24,6 +25,8 @@ def serializedATN():
         0,32,35,1,0,0,0,33,35,5,8,0,0,34,24,1,0,0,0,34,33,1,0,0,0,35,7,1,
         0,0,0,4,11,20,29,34
 =======
+=======
+>>>>>>> 7483039019a702f260c0e1e044ebd4ebb7e8ccaf
         4,1,9,35,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,1,0,4,0,10,8,0,11,0,12,
         0,11,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3,1,21,8,1,1,2,1,2,1,3,1,3,1,3,
         1,3,1,3,1,3,1,3,1,3,3,3,33,8,3,1,3,0,0,4,0,2,4,6,0,1,1,0,4,5,34,
@@ -35,6 +38,9 @@ def serializedATN():
         0,0,25,26,5,1,0,0,26,27,3,6,3,0,27,28,5,2,0,0,28,29,3,6,3,0,29,30,
         5,3,0,0,30,33,1,0,0,0,31,33,5,7,0,0,32,24,1,0,0,0,32,31,1,0,0,0,
         33,7,1,0,0,0,3,11,20,32
+<<<<<<< HEAD
+>>>>>>> 7483039019a702f260c0e1e044ebd4ebb7e8ccaf
+=======
 >>>>>>> 7483039019a702f260c0e1e044ebd4ebb7e8ccaf
     ]
 
@@ -50,10 +56,17 @@ class PrimeraParteParser ( Parser ):
 
     literalNames = [ "<INVALID>", "'('", "','", "')'", "'encendido'", "'apagado'", 
 <<<<<<< HEAD
+<<<<<<< HEAD
                      "'mover'", "'rotar'" ]
 
     symbolicNames = [ "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                       "ENC", "APAG", "MOV", "ROT", "INT", "NEWLINE", "WS" ]
+=======
+                     "'mover'" ]
+
+    symbolicNames = [ "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
+                      "ENC", "APAG", "MOV", "INT", "NEWLINE", "WS" ]
+>>>>>>> 7483039019a702f260c0e1e044ebd4ebb7e8ccaf
 =======
                      "'mover'" ]
 
@@ -76,10 +89,16 @@ class PrimeraParteParser ( Parser ):
     APAG=5
     MOV=6
 <<<<<<< HEAD
+<<<<<<< HEAD
     ROT=7
     INT=8
     NEWLINE=9
     WS=10
+=======
+    INT=7
+    NEWLINE=8
+    WS=9
+>>>>>>> 7483039019a702f260c0e1e044ebd4ebb7e8ccaf
 =======
     INT=7
     NEWLINE=8
@@ -138,7 +157,11 @@ class PrimeraParteParser ( Parser ):
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
 <<<<<<< HEAD
+<<<<<<< HEAD
                 if not ((((_la) & ~0x3f) == 0 and ((1 << _la) & 1008) != 0)):
+=======
+                if not ((((_la) & ~0x3f) == 0 and ((1 << _la) & 496) != 0)):
+>>>>>>> 7483039019a702f260c0e1e044ebd4ebb7e8ccaf
 =======
                 if not ((((_la) & ~0x3f) == 0 and ((1 << _la) & 496) != 0)):
 >>>>>>> 7483039019a702f260c0e1e044ebd4ebb7e8ccaf
@@ -242,7 +265,11 @@ class PrimeraParteParser ( Parser ):
                 self.match(PrimeraParteParser.NEWLINE)
                 pass
 <<<<<<< HEAD
+<<<<<<< HEAD
             elif token in [6, 7, 8]:
+=======
+            elif token in [6, 7]:
+>>>>>>> 7483039019a702f260c0e1e044ebd4ebb7e8ccaf
 =======
             elif token in [6, 7]:
 >>>>>>> 7483039019a702f260c0e1e044ebd4ebb7e8ccaf
@@ -254,7 +281,11 @@ class PrimeraParteParser ( Parser ):
                 self.match(PrimeraParteParser.NEWLINE)
                 pass
 <<<<<<< HEAD
+<<<<<<< HEAD
             elif token in [9]:
+=======
+            elif token in [8]:
+>>>>>>> 7483039019a702f260c0e1e044ebd4ebb7e8ccaf
 =======
             elif token in [8]:
 >>>>>>> 7483039019a702f260c0e1e044ebd4ebb7e8ccaf
@@ -369,10 +400,13 @@ class PrimeraParteParser ( Parser ):
                 return self.getTypedRuleContext(PrimeraParteParser.PunteroContext,i)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         def MOV(self):
             return self.getToken(PrimeraParteParser.MOV, 0)
         def ROT(self):
             return self.getToken(PrimeraParteParser.ROT, 0)
+=======
+>>>>>>> 7483039019a702f260c0e1e044ebd4ebb7e8ccaf
 =======
 >>>>>>> 7483039019a702f260c0e1e044ebd4ebb7e8ccaf
 
@@ -405,6 +439,7 @@ class PrimeraParteParser ( Parser ):
         localctx = PrimeraParteParser.PunteroContext(self, self._ctx, self.state)
         self.enterRule(localctx, 6, self.RULE_puntero)
 <<<<<<< HEAD
+<<<<<<< HEAD
         self._la = 0 # Token type
         try:
             self.state = 34
@@ -432,10 +467,22 @@ class PrimeraParteParser ( Parser ):
                 self.state = 24
                 self.match(PrimeraParteParser.MOV)
 >>>>>>> 7483039019a702f260c0e1e044ebd4ebb7e8ccaf
+=======
+        try:
+            self.state = 32
+            self._errHandler.sync(self)
+            token = self._input.LA(1)
+            if token in [6]:
+                localctx = PrimeraParteParser.PosContext(self, localctx)
+                self.enterOuterAlt(localctx, 1)
+                self.state = 24
+                self.match(PrimeraParteParser.MOV)
+>>>>>>> 7483039019a702f260c0e1e044ebd4ebb7e8ccaf
                 self.state = 25
                 self.match(PrimeraParteParser.T__0)
                 self.state = 26
                 self.puntero()
+<<<<<<< HEAD
 <<<<<<< HEAD
                 self.state = 29
                 self._errHandler.sync(self)
@@ -454,6 +501,19 @@ class PrimeraParteParser ( Parser ):
                 localctx = PrimeraParteParser.INTContext(self, localctx)
                 self.enterOuterAlt(localctx, 2)
                 self.state = 33
+=======
+                self.state = 27
+                self.match(PrimeraParteParser.T__1)
+                self.state = 28
+                self.puntero()
+                self.state = 29
+                self.match(PrimeraParteParser.T__2)
+                pass
+            elif token in [7]:
+                localctx = PrimeraParteParser.INTContext(self, localctx)
+                self.enterOuterAlt(localctx, 2)
+                self.state = 31
+>>>>>>> 7483039019a702f260c0e1e044ebd4ebb7e8ccaf
 =======
                 self.state = 27
                 self.match(PrimeraParteParser.T__1)
