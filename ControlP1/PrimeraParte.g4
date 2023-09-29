@@ -2,16 +2,21 @@ grammar PrimeraParte;
 
 prog: dibujo+ ;
 
-dibujo:   puntero NEWLINE                                         # Dib
+dibujo:   modo NEWLINE                                            # Mod
+      |   puntero NEWLINE                                         # Dib
       |   NEWLINE                                                 # blank
       ;
 
-puntero: '(' puntero ',' puntero ')' op=('encendido'|'apagado')   # Pos
+modo: op=('encendido'|'apagado')                                  # AsignMod
+    ;  
+
+puntero: MOV '(' puntero ',' puntero ')'                          # Pos
        | INT                                                      # INT
        ;
 
 ENC :     'encendido' ;
 APAG :    'apagado' ;
+MOV:      'mover' ;
 INT :   [0-9]+ ;
 NEWLINE:  '\r'? '\n' ;
 WS :      [ \t]+ -> skip ;
