@@ -3,11 +3,24 @@ T__1=2
 T__2=3
 ENC=4
 APAG=5
-INT=6
-NEWLINE=7
-WS=8
+MOV=6
+<<<<<<< HEAD
+ROT=7
+INT=8
+NEWLINE=9
+WS=10
+=======
+INT=7
+NEWLINE=8
+WS=9
+>>>>>>> 7483039019a702f260c0e1e044ebd4ebb7e8ccaf
 '('=1
 ','=2
 ')'=3
 'encendido'=4
 'apagado'=5
+'mover'=6
+<<<<<<< HEAD
+'rotar'=7
+=======
+>>>>>>> 7483039019a702f260c0e1e044ebd4ebb7e8ccaf

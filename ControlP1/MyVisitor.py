@@ -5,6 +5,16 @@ from turtle import *
 class MyVisitor(PrimeraParteVisitor):
     def __init__(self):
         self.memory = {}
+
+    def visitMod(self, ctx):
+        value = self.visit(ctx.modo())
+        print(value)
+        return 0
+    
+    def visitMod(self, ctx):
+        value = self.visit(ctx.modo())
+        print(value)
+        return 0
     
     def visitDib(self, ctx):
         value = self.visit(ctx.puntero())
@@ -13,16 +23,28 @@ class MyVisitor(PrimeraParteVisitor):
     
     def visitINT(self, ctx):
         return ctx.INT().getText()
+
+    def visitAsignMod(self, ctx):
+        if ctx.op.type == PrimeraParteParser.ENC:
+            pendown()
+            return 0
+        else:
+            penup()
+            return 0
+    
+    def visitAsignMod(self, ctx):
+        if ctx.op.type == PrimeraParteParser.ENC:
+            pendown()
+            return 0
+        else:
+            penup()
+            return 0
     
     def visitPos(self, ctx):
         coordX = int(self.visit(ctx.puntero(0)))
         coordY = int(self.visit(ctx.puntero(1)))
-        if ctx.op.type == PrimeraParteParser.ENC:
-            pendown()
-            goto(coordX,coordY)
-            return 0
-        penup()
-        goto(coordX,coordY)
+        hideturtle()
+        setpos(coordX,coordY)
         return 0
     
         

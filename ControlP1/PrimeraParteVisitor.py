@@ -14,6 +14,11 @@ class PrimeraParteVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by PrimeraParteParser#Mod.
+    def visitMod(self, ctx:PrimeraParteParser.ModContext):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by PrimeraParteParser#Dib.
     def visitDib(self, ctx:PrimeraParteParser.DibContext):
         return self.visitChildren(ctx)
@@ -21,6 +26,11 @@ class PrimeraParteVisitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by PrimeraParteParser#blank.
     def visitBlank(self, ctx:PrimeraParteParser.BlankContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by PrimeraParteParser#AsignMod.
+    def visitAsignMod(self, ctx:PrimeraParteParser.AsignModContext):
         return self.visitChildren(ctx)
 
 

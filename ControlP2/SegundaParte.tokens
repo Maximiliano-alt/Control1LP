@@ -1,0 +1,17 @@
+T__0=1
+T__1=2
+T__2=3
+ENC=4
+APAG=5
+MOV=6
+ROT=7
+INT=8
+NEWLINE=9
+WS=10
+'('=1
+','=2
+')'=3
+'encendido'=4
+'apagado'=5
+'mover'=6
+'rotar'=7
