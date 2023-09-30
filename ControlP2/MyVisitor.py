@@ -30,8 +30,12 @@ class MyVisitor(SegundaParteVisitor):
     def visitPos(self, ctx):
         coordX = int(self.visit(ctx.puntero(0)))
         coordY = int(self.visit(ctx.puntero(1)))
+        angulo = towards(coordX, coordY)
         hideturtle()
+        print('orientacion antes del movimiento: ' + str(heading()))  # QUITAR DESPUES DE TERMINAR P2
+        setheading(angulo)
         setpos(coordX,coordY)
+        print('orientacion despues del movimiento: ' + str(heading())) # QUITAR DESPUES DE TERMINAR P2
         return 0
     
         
