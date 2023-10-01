@@ -29,13 +29,28 @@ class MyVisitor(SegundaParteVisitor):
     
     def visitPos(self, ctx):
         coordX = int(self.visit(ctx.puntero(0)))
-        coordY = int(self.visit(ctx.puntero(1)))
-        angulo = towards(coordX, coordY)
-        hideturtle()
-        print('orientacion antes del movimiento: ' + str(heading()))  # QUITAR DESPUES DE TERMINAR P2
-        setheading(angulo)
-        setpos(coordX,coordY)
-        print('orientacion despues del movimiento: ' + str(heading())) # QUITAR DESPUES DE TERMINAR P2
+        if ctx.puntero(1) != None:
+            coordY = int(self.visit(ctx.puntero(1)))
+        else:
+            coordY = None
+
+        #hideturtle()
+        if ctx.op.type == SegundaParteParser.MOV:
+            if coordY != None:
+                angulo = towards(coordX, coordY)
+                setheading(angulo)
+                setpos(coordX,coordY)
+                return 0
+            else:
+                forward(coordX)
+        elif ctx.op.type == SegundaParteParser.ROT:
+            if coordY != None:
+                angulo = towards(coordX, coordY)
+                setheading(angulo)
+                return 0
+            else:
+                orientacion = heading()
+                setheading(coordX + orientacion)
         return 0
     
         

@@ -18,6 +18,6 @@ ENC :     'encendido' ;
 APAG :    'apagado' ;
 MOV:      'mover' ;
 ROT:      'rotar' ;
-INT :   [0-9]+ ;
+INT :   '-'? [0-9]+ ;
 NEWLINE:  '\r'? '\n' ;
 WS :      [ \t]+ -> skip ;
