@@ -10,8 +10,9 @@ dibujo:   modo NEWLINE                                            # Mod
 modo: op=('encendido'|'apagado')                                  # AsignMod
     ;                                 
 
-puntero: op=('mover'|'rotar')'(' puntero (',' puntero)? ')'       # Pos
-       | INT                                                      # INT
+puntero: MOV '(' puntero (',' puntero)? ')' # Mov // Como estaba antes: op=('mover'|'rotar')'(' puntero (',' puntero)? ')' # Pos
+       | ROT '(' puntero (',' puntero)? ')' # Rot
+       | INT                                # INT
        ;
 
 ENC :     'encendido' ;

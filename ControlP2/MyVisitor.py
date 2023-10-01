@@ -5,7 +5,7 @@ from turtle import *
 class MyVisitor(SegundaParteVisitor):
     def __init__(self):
         self.memory = {}
-
+    
     def visitMod(self, ctx):
         value = self.visit(ctx.modo())
         print(value)
@@ -27,15 +27,38 @@ class MyVisitor(SegundaParteVisitor):
             penup()
             return 0
     
-    def visitPos(self, ctx):
+    def visitMov(self, ctx):
         coordX = int(self.visit(ctx.puntero(0)))
-        coordY = int(self.visit(ctx.puntero(1)))
-        angulo = towards(coordX, coordY)
-        hideturtle()
-        print('orientacion antes del movimiento: ' + str(heading()))  # QUITAR DESPUES DE TERMINAR P2
-        setheading(angulo)
-        setpos(coordX,coordY)
-        print('orientacion despues del movimiento: ' + str(heading())) # QUITAR DESPUES DE TERMINAR P2
+        if ctx.puntero(1) != None:
+            coordY = int(self.visit(ctx.puntero(1)))
+        else:
+            coordY = None
+
+        #hideturtle()
+        if coordY != None:
+            angulo = towards(coordX, coordY)
+            setheading(angulo)
+            setpos(coordX,coordY)
+            return 0
+        else:
+            forward(coordX)
+        return 0
+    
+    def visitRot(self, ctx):
+        coordX = int(self.visit(ctx.puntero(0)))
+        if ctx.puntero(1) != None:
+            coordY = int(self.visit(ctx.puntero(1)))
+        else:
+            coordY = None
+            
+        #hideturtle()
+        if coordY != None:
+            angulo = towards(coordX, coordY)
+            setheading(angulo)
+            return 0
+        else:
+            orientacion = heading()
+            setheading(coordX + orientacion)
         return 0
     
         

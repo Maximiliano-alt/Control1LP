@@ -34,8 +34,13 @@ class SegundaParteVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by SegundaParteParser#Pos.
-    def visitPos(self, ctx:SegundaParteParser.PosContext):
+    # Visit a parse tree produced by SegundaParteParser#Mov.
+    def visitMov(self, ctx:SegundaParteParser.MovContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by SegundaParteParser#Rot.
+    def visitRot(self, ctx:SegundaParteParser.RotContext):
         return self.visitChildren(ctx)
 
 
