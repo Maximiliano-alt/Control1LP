@@ -39,10 +39,5 @@ class PrimeraParteVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by PrimeraParteParser#INT.
-    def visitINT(self, ctx:PrimeraParteParser.INTContext):
-        return self.visitChildren(ctx)
-
-
 
 del PrimeraParteParser

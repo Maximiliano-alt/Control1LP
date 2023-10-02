@@ -15,9 +15,6 @@ class MyVisitor(PrimeraParteVisitor):
         value = self.visit(ctx.puntero())
         print(value)
         return 0
-    
-    def visitINT(self, ctx):
-        return ctx.INT().getText()
 
     def visitAsignMod(self, ctx):
         if ctx.op.type == PrimeraParteParser.ENC:
@@ -28,8 +25,8 @@ class MyVisitor(PrimeraParteVisitor):
             return 0
     
     def visitPos(self, ctx):
-        coordX = int(self.visit(ctx.puntero(0)))
-        coordY = int(self.visit(ctx.puntero(1)))
+        coordX = int(ctx.INT(0).getText())
+        coordY = int(ctx.INT(1).getText())
         hideturtle()
         setpos(coordX,coordY)
         return 0
