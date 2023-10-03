@@ -16,9 +16,6 @@ class MyVisitor(SegundaParteVisitor):
         print(value)
         return 0
     
-    def visitINT(self, ctx):
-        return ctx.INT().getText()
-    
     def visitAsignMod(self, ctx):
         if ctx.op.type == SegundaParteParser.ENC:
             pendown()
@@ -28,9 +25,9 @@ class MyVisitor(SegundaParteVisitor):
             return 0
     
     def visitMov(self, ctx):
-        coordX = int(self.visit(ctx.puntero(0)))
-        if ctx.puntero(1) != None:
-            coordY = int(self.visit(ctx.puntero(1)))
+        coordX = int(ctx.INT(0).getText())
+        if ctx.INT(1) != None:
+            coordY = int(ctx.INT(1).getText())
         else:
             coordY = None
 
@@ -45,9 +42,9 @@ class MyVisitor(SegundaParteVisitor):
         return 0
     
     def visitRot(self, ctx):
-        coordX = int(self.visit(ctx.puntero(0)))
-        if ctx.puntero(1) != None:
-            coordY = int(self.visit(ctx.puntero(1)))
+        coordX = int(ctx.INT(0).getText())
+        if ctx.INT(1) != None:
+            coordY = int(ctx.INT(1).getText())
         else:
             coordY = None
             

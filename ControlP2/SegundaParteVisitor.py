@@ -44,10 +44,5 @@ class SegundaParteVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by SegundaParteParser#INT.
-    def visitINT(self, ctx:SegundaParteParser.INTContext):
-        return self.visitChildren(ctx)
-
-
 
 del SegundaParteParser
