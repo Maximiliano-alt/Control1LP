@@ -10,13 +10,12 @@ dibujo:   modo NEWLINE                                            # Mod
 modo: op=('encendido'|'apagado')                                  # AsignMod
     ;                                 
 
-puntero: MOV '(' puntero ',' puntero ')'                          # Pos
-       | INT                                                      # INT
+puntero: MOV '(' INT ',' INT ')'                                  # Pos
        ;
 
 ENC :     'encendido' ;
 APAG :    'apagado' ;
 MOV:      'mover' ;
-INT :   [0-9]+ ;
+INT :   '-'? [0-9]+ ;
 NEWLINE:  '\r'? '\n' ;
 WS :      [ \t]+ -> skip ;
