@@ -1,4 +1,4 @@
-// Generated from c:\Users\Kevin\Downloads\Control1LP\ControlP1\PrimeraParte.g4 by ANTLR 4.9.2
+// Generated from c:/Users/josem/Documents/Lenguajes de Programacion/Control1LP/ControlP1/PrimeraParte.g4 by ANTLR 4.13.1
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
@@ -8,33 +8,33 @@ import java.util.List;
 import java.util.Iterator;
 import java.util.ArrayList;
 
-@SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
+@SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast", "CheckReturnValue"})
 public class PrimeraParteParser extends Parser {
-	static { RuntimeMetaData.checkVersion("4.9.2", RuntimeMetaData.VERSION); }
+	static { RuntimeMetaData.checkVersion("4.13.1", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
-		T__0=1, T__1=2, T__2=3, ENC=4, APAG=5, INT=6, NEWLINE=7, WS=8;
+		T__0=1, T__1=2, T__2=3, ENC=4, APAG=5, MOV=6, INT=7, NEWLINE=8, WS=9;
 	public static final int
-		RULE_prog = 0, RULE_dibujo = 1, RULE_puntero = 2;
+		RULE_prog = 0, RULE_dibujo = 1, RULE_modo = 2, RULE_puntero = 3;
 	private static String[] makeRuleNames() {
 		return new String[] {
-			"prog", "dibujo", "puntero"
+			"prog", "dibujo", "modo", "puntero"
 		};
 	}
 	public static final String[] ruleNames = makeRuleNames();
 
 	private static String[] makeLiteralNames() {
 		return new String[] {
-			null, "'('", "','", "')'", "'encendido'", "'apagado'"
+			null, "'('", "','", "')'", "'encendido'", "'apagado'", "'mover'"
 		};
 	}
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
 	private static String[] makeSymbolicNames() {
 		return new String[] {
-			null, null, null, null, "ENC", "APAG", "INT", "NEWLINE", "WS"
+			null, null, null, null, "ENC", "APAG", "MOV", "INT", "NEWLINE", "WS"
 		};
 	}
 	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
@@ -88,6 +88,7 @@ public class PrimeraParteParser extends Parser {
 		_interp = new ParserATNSimulator(this,_ATN,_decisionToDFA,_sharedContextCache);
 	}
 
+	@SuppressWarnings("CheckReturnValue")
 	public static class ProgContext extends ParserRuleContext {
 		public List<DibujoContext> dibujo() {
 			return getRuleContexts(DibujoContext.class);
@@ -99,6 +100,14 @@ public class PrimeraParteParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_prog; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof PrimeraParteListener ) ((PrimeraParteListener)listener).enterProg(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof PrimeraParteListener ) ((PrimeraParteListener)listener).exitProg(this);
+		}
 	}
 
 	public final ProgContext prog() throws RecognitionException {
@@ -108,20 +117,20 @@ public class PrimeraParteParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(7); 
+			setState(9); 
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			do {
 				{
 				{
-				setState(6);
+				setState(8);
 				dibujo();
 				}
 				}
-				setState(9); 
+				setState(11); 
 				_errHandler.sync(this);
 				_la = _input.LA(1);
-			} while ( (((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << INT) | (1L << NEWLINE))) != 0) );
+			} while ( (((_la) & ~0x3f) == 0 && ((1L << _la) & 368L) != 0) );
 			}
 		}
 		catch (RecognitionException re) {
@@ -135,6 +144,7 @@ public class PrimeraParteParser extends Parser {
 		return _localctx;
 	}
 
+	@SuppressWarnings("CheckReturnValue")
 	public static class DibujoContext extends ParserRuleContext {
 		public DibujoContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -146,41 +156,85 @@ public class PrimeraParteParser extends Parser {
 			super.copyFrom(ctx);
 		}
 	}
+	@SuppressWarnings("CheckReturnValue")
+	public static class ModContext extends DibujoContext {
+		public ModoContext modo() {
+			return getRuleContext(ModoContext.class,0);
+		}
+		public TerminalNode NEWLINE() { return getToken(PrimeraParteParser.NEWLINE, 0); }
+		public ModContext(DibujoContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof PrimeraParteListener ) ((PrimeraParteListener)listener).enterMod(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof PrimeraParteListener ) ((PrimeraParteListener)listener).exitMod(this);
+		}
+	}
+	@SuppressWarnings("CheckReturnValue")
 	public static class BlankContext extends DibujoContext {
 		public TerminalNode NEWLINE() { return getToken(PrimeraParteParser.NEWLINE, 0); }
 		public BlankContext(DibujoContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof PrimeraParteListener ) ((PrimeraParteListener)listener).enterBlank(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof PrimeraParteListener ) ((PrimeraParteListener)listener).exitBlank(this);
+		}
 	}
+	@SuppressWarnings("CheckReturnValue")
 	public static class DibContext extends DibujoContext {
 		public PunteroContext puntero() {
 			return getRuleContext(PunteroContext.class,0);
 		}
 		public TerminalNode NEWLINE() { return getToken(PrimeraParteParser.NEWLINE, 0); }
 		public DibContext(DibujoContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof PrimeraParteListener ) ((PrimeraParteListener)listener).enterDib(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof PrimeraParteListener ) ((PrimeraParteListener)listener).exitDib(this);
+		}
 	}
 
 	public final DibujoContext dibujo() throws RecognitionException {
 		DibujoContext _localctx = new DibujoContext(_ctx, getState());
 		enterRule(_localctx, 2, RULE_dibujo);
 		try {
-			setState(15);
+			setState(20);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
-			case T__0:
-			case INT:
-				_localctx = new DibContext(_localctx);
+			case ENC:
+			case APAG:
+				_localctx = new ModContext(_localctx);
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(11);
+				setState(13);
+				modo();
+				setState(14);
+				match(NEWLINE);
+				}
+				break;
+			case MOV:
+				_localctx = new DibContext(_localctx);
+				enterOuterAlt(_localctx, 2);
+				{
+				setState(16);
 				puntero();
-				setState(12);
+				setState(17);
 				match(NEWLINE);
 				}
 				break;
 			case NEWLINE:
 				_localctx = new BlankContext(_localctx);
-				enterOuterAlt(_localctx, 2);
+				enterOuterAlt(_localctx, 3);
 				{
-				setState(14);
+				setState(19);
 				match(NEWLINE);
 				}
 				break;
@@ -199,6 +253,67 @@ public class PrimeraParteParser extends Parser {
 		return _localctx;
 	}
 
+	@SuppressWarnings("CheckReturnValue")
+	public static class ModoContext extends ParserRuleContext {
+		public ModoContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_modo; }
+	 
+		public ModoContext() { }
+		public void copyFrom(ModoContext ctx) {
+			super.copyFrom(ctx);
+		}
+	}
+	@SuppressWarnings("CheckReturnValue")
+	public static class AsignModContext extends ModoContext {
+		public Token op;
+		public TerminalNode ENC() { return getToken(PrimeraParteParser.ENC, 0); }
+		public TerminalNode APAG() { return getToken(PrimeraParteParser.APAG, 0); }
+		public AsignModContext(ModoContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof PrimeraParteListener ) ((PrimeraParteListener)listener).enterAsignMod(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof PrimeraParteListener ) ((PrimeraParteListener)listener).exitAsignMod(this);
+		}
+	}
+
+	public final ModoContext modo() throws RecognitionException {
+		ModoContext _localctx = new ModoContext(_ctx, getState());
+		enterRule(_localctx, 4, RULE_modo);
+		int _la;
+		try {
+			_localctx = new AsignModContext(_localctx);
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(22);
+			((AsignModContext)_localctx).op = _input.LT(1);
+			_la = _input.LA(1);
+			if ( !(_la==ENC || _la==APAG) ) {
+				((AsignModContext)_localctx).op = (Token)_errHandler.recoverInline(this);
+			}
+			else {
+				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+				_errHandler.reportMatch(this);
+				consume();
+			}
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	@SuppressWarnings("CheckReturnValue")
 	public static class PunteroContext extends ParserRuleContext {
 		public PunteroContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -210,68 +325,43 @@ public class PrimeraParteParser extends Parser {
 			super.copyFrom(ctx);
 		}
 	}
+	@SuppressWarnings("CheckReturnValue")
 	public static class PosContext extends PunteroContext {
-		public Token op;
-		public List<PunteroContext> puntero() {
-			return getRuleContexts(PunteroContext.class);
+		public TerminalNode MOV() { return getToken(PrimeraParteParser.MOV, 0); }
+		public List<TerminalNode> INT() { return getTokens(PrimeraParteParser.INT); }
+		public TerminalNode INT(int i) {
+			return getToken(PrimeraParteParser.INT, i);
 		}
-		public PunteroContext puntero(int i) {
-			return getRuleContext(PunteroContext.class,i);
-		}
-		public TerminalNode ENC() { return getToken(PrimeraParteParser.ENC, 0); }
-		public TerminalNode APAG() { return getToken(PrimeraParteParser.APAG, 0); }
 		public PosContext(PunteroContext ctx) { copyFrom(ctx); }
-	}
-	public static class INTContext extends PunteroContext {
-		public TerminalNode INT() { return getToken(PrimeraParteParser.INT, 0); }
-		public INTContext(PunteroContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof PrimeraParteListener ) ((PrimeraParteListener)listener).enterPos(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof PrimeraParteListener ) ((PrimeraParteListener)listener).exitPos(this);
+		}
 	}
 
 	public final PunteroContext puntero() throws RecognitionException {
 		PunteroContext _localctx = new PunteroContext(_ctx, getState());
-		enterRule(_localctx, 4, RULE_puntero);
-		int _la;
+		enterRule(_localctx, 6, RULE_puntero);
 		try {
+			_localctx = new PosContext(_localctx);
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(24);
+			match(MOV);
 			setState(25);
-			_errHandler.sync(this);
-			switch (_input.LA(1)) {
-			case T__0:
-				_localctx = new PosContext(_localctx);
-				enterOuterAlt(_localctx, 1);
-				{
-				setState(17);
-				match(T__0);
-				setState(18);
-				puntero();
-				setState(19);
-				match(T__1);
-				setState(20);
-				puntero();
-				setState(21);
-				match(T__2);
-				setState(22);
-				((PosContext)_localctx).op = _input.LT(1);
-				_la = _input.LA(1);
-				if ( !(_la==ENC || _la==APAG) ) {
-					((PosContext)_localctx).op = (Token)_errHandler.recoverInline(this);
-				}
-				else {
-					if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
-					_errHandler.reportMatch(this);
-					consume();
-				}
-				}
-				break;
-			case INT:
-				_localctx = new INTContext(_localctx);
-				enterOuterAlt(_localctx, 2);
-				{
-				setState(24);
-				match(INT);
-				}
-				break;
-			default:
-				throw new NoViableAltException(this);
+			match(T__0);
+			setState(26);
+			match(INT);
+			setState(27);
+			match(T__1);
+			setState(28);
+			match(INT);
+			setState(29);
+			match(T__2);
 			}
 		}
 		catch (RecognitionException re) {
@@ -286,15 +376,28 @@ public class PrimeraParteParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\n\36\4\2\t\2\4\3"+
-		"\t\3\4\4\t\4\3\2\6\2\n\n\2\r\2\16\2\13\3\3\3\3\3\3\3\3\5\3\22\n\3\3\4"+
-		"\3\4\3\4\3\4\3\4\3\4\3\4\3\4\5\4\34\n\4\3\4\2\2\5\2\4\6\2\3\3\2\6\7\2"+
-		"\35\2\t\3\2\2\2\4\21\3\2\2\2\6\33\3\2\2\2\b\n\5\4\3\2\t\b\3\2\2\2\n\13"+
-		"\3\2\2\2\13\t\3\2\2\2\13\f\3\2\2\2\f\3\3\2\2\2\r\16\5\6\4\2\16\17\7\t"+
-		"\2\2\17\22\3\2\2\2\20\22\7\t\2\2\21\r\3\2\2\2\21\20\3\2\2\2\22\5\3\2\2"+
-		"\2\23\24\7\3\2\2\24\25\5\6\4\2\25\26\7\4\2\2\26\27\5\6\4\2\27\30\7\5\2"+
-		"\2\30\31\t\2\2\2\31\34\3\2\2\2\32\34\7\b\2\2\33\23\3\2\2\2\33\32\3\2\2"+
-		"\2\34\7\3\2\2\2\5\13\21\33";
+		"\u0004\u0001\t \u0002\u0000\u0007\u0000\u0002\u0001\u0007\u0001\u0002"+
+		"\u0002\u0007\u0002\u0002\u0003\u0007\u0003\u0001\u0000\u0004\u0000\n\b"+
+		"\u0000\u000b\u0000\f\u0000\u000b\u0001\u0001\u0001\u0001\u0001\u0001\u0001"+
+		"\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0003\u0001\u0015\b\u0001\u0001"+
+		"\u0002\u0001\u0002\u0001\u0003\u0001\u0003\u0001\u0003\u0001\u0003\u0001"+
+		"\u0003\u0001\u0003\u0001\u0003\u0001\u0003\u0000\u0000\u0004\u0000\u0002"+
+		"\u0004\u0006\u0000\u0001\u0001\u0000\u0004\u0005\u001e\u0000\t\u0001\u0000"+
+		"\u0000\u0000\u0002\u0014\u0001\u0000\u0000\u0000\u0004\u0016\u0001\u0000"+
+		"\u0000\u0000\u0006\u0018\u0001\u0000\u0000\u0000\b\n\u0003\u0002\u0001"+
+		"\u0000\t\b\u0001\u0000\u0000\u0000\n\u000b\u0001\u0000\u0000\u0000\u000b"+
+		"\t\u0001\u0000\u0000\u0000\u000b\f\u0001\u0000\u0000\u0000\f\u0001\u0001"+
+		"\u0000\u0000\u0000\r\u000e\u0003\u0004\u0002\u0000\u000e\u000f\u0005\b"+
+		"\u0000\u0000\u000f\u0015\u0001\u0000\u0000\u0000\u0010\u0011\u0003\u0006"+
+		"\u0003\u0000\u0011\u0012\u0005\b\u0000\u0000\u0012\u0015\u0001\u0000\u0000"+
+		"\u0000\u0013\u0015\u0005\b\u0000\u0000\u0014\r\u0001\u0000\u0000\u0000"+
+		"\u0014\u0010\u0001\u0000\u0000\u0000\u0014\u0013\u0001\u0000\u0000\u0000"+
+		"\u0015\u0003\u0001\u0000\u0000\u0000\u0016\u0017\u0007\u0000\u0000\u0000"+
+		"\u0017\u0005\u0001\u0000\u0000\u0000\u0018\u0019\u0005\u0006\u0000\u0000"+
+		"\u0019\u001a\u0005\u0001\u0000\u0000\u001a\u001b\u0005\u0007\u0000\u0000"+
+		"\u001b\u001c\u0005\u0002\u0000\u0000\u001c\u001d\u0005\u0007\u0000\u0000"+
+		"\u001d\u001e\u0005\u0003\u0000\u0000\u001e\u0007\u0001\u0000\u0000\u0000"+
+		"\u0002\u000b\u0014";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {
