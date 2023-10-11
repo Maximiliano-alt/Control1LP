@@ -15,7 +15,10 @@ class MyVisitor(TerceraParteVisitor):
         value = self.visit(ctx.puntero())
         print(value)
         return 0
-
+    
+    def visitINT(self, ctx):
+        return ctx.INT().getText()
+    
     def visitAsignMod(self, ctx):
         if ctx.op.type == TerceraParteParser.ENC:
             pendown()
@@ -25,15 +28,46 @@ class MyVisitor(TerceraParteVisitor):
             return 0
     
     def visitPos(self, ctx):
-        coordX = int(ctx.INT(0).getText())
-        coordY = int(ctx.INT(1).getText())
-        angulo2 = int(ctx.INT(2).getText())
+        coordX = int(self.visit(ctx.puntero(0)))
+        if ctx.puntero(1) != None:
+            coordY = int(self.visit(ctx.puntero(1)))
+        else:
+            coordY = None
+
         #hideturtle()
-        angulo = towards(coordX, coordY)
-        setheading(angulo)
-        setpos(coordX,coordY)
-        setheading(angulo)
-        left(angulo2)
+        if ctx.op.type == TerceraParteParser.MOV:
+            if coordY != None:
+                angulo = towards(coordX, coordY)
+                setheading(angulo)
+                setpos(coordX,coordY)
+                return 0
+            else:
+                forward(coordX)
+        elif ctx.op.type == TerceraParteParser.ROT:
+            if coordY != None:
+                angulo = towards(coordX, coordY)
+                setheading(angulo)
+                return 0
+            else:
+                orientacion = heading()
+                setheading(coordX + orientacion)
+        return 0
+    
+    def visitAng(self, ctx):
+        coordX = int(self.visit(ctx.puntero(0)))
+        coordY = int(self.visit(ctx.puntero(1)))
+        if ctx.op.type == TerceraParteParser.SUM:
+            ang = int(self.visit(ctx.puntero(2)))
+            angulo = towards(coordX, coordY)
+            setheading(angulo)
+            setpos(coordX,coordY)
+            left(ang)
+        elif ctx.op.type == TerceraParteParser.RES:
+            ang = int(self.visit(ctx.puntero(2)))
+            angulo = towards(coordX, coordY)
+            setheading(angulo)
+            setpos(coordX,coordY)
+            right(ang)
         return 0
     
         

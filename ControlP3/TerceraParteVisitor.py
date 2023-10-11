@@ -39,5 +39,15 @@ class TerceraParteVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by TerceraParteParser#Ang.
+    def visitAng(self, ctx:TerceraParteParser.AngContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by TerceraParteParser#INT.
+    def visitINT(self, ctx:TerceraParteParser.INTContext):
+        return self.visitChildren(ctx)
+
+
 
 del TerceraParteParser
