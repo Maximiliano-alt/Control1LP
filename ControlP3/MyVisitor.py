@@ -67,6 +67,7 @@ class MyVisitor(TerceraParteVisitor):
         return 0
     
     def visitSntxRotOp(self, ctx):
+        orientacion = heading()
         izq = float(self.visit(ctx.movimiento(0)))
         der = float(self.visit(ctx.movimiento(1)))
         if ctx.op.type == TerceraParteParser.SUM:
@@ -75,7 +76,7 @@ class MyVisitor(TerceraParteVisitor):
             return 0
         elif ctx.op.type == TerceraParteParser.REST:
             print(izq - der)
-            setheading(izq - der)
+            setheading(orientacion + izq - der)
             return 0
         return 0
     
