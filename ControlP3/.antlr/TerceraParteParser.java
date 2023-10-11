@@ -465,8 +465,8 @@ public class TerceraParteParser extends Parser {
 		public MovimientoContext movimiento(int i) {
 			return getRuleContext(MovimientoContext.class,i);
 		}
-		public TerminalNode SUM() { return getToken(TerceraParteParser.SUM, 0); }
 		public TerminalNode REST() { return getToken(TerceraParteParser.REST, 0); }
+		public TerminalNode SUM() { return getToken(TerceraParteParser.SUM, 0); }
 		public SntxRotOpContext(RotacionContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {

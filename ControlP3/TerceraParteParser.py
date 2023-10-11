@@ -472,10 +472,10 @@ class TerceraParteParser ( Parser ):
             else:
                 return self.getTypedRuleContext(TerceraParteParser.MovimientoContext,i)
 
-        def SUM(self):
-            return self.getToken(TerceraParteParser.SUM, 0)
         def REST(self):
             return self.getToken(TerceraParteParser.REST, 0)
+        def SUM(self):
+            return self.getToken(TerceraParteParser.SUM, 0)
 
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitSntxRotOp" ):
