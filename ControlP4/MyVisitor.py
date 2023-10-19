@@ -1,8 +1,8 @@
-from TerceraParteVisitor import TerceraParteVisitor
-from TerceraParteParser import TerceraParteParser
+from CuartaParteVisitor import CuartaParteVisitor
+from CuartaParteParser import CuartaParteParser
 from turtle import *
 
-class MyVisitor(TerceraParteVisitor):
+class MyVisitor(CuartaParteVisitor):
     def __init__(self):
         self.memory = {}
     
@@ -25,7 +25,7 @@ class MyVisitor(TerceraParteVisitor):
         return ctx.INT().getText()
     
     def visitAsignMod(self, ctx):
-        if ctx.op.type == TerceraParteParser.ENC:
+        if ctx.op.type == CuartaParteParser.ENC:
             pendown()
             return 0
         else:
@@ -70,16 +70,32 @@ class MyVisitor(TerceraParteVisitor):
         izq = float(self.visit(ctx.movimiento(0)))
         der = float(self.visit(ctx.movimiento(1)))
         orientacion = heading()
-        if ctx.op.type == TerceraParteParser.SUM:
+        if ctx.op.type == CuartaParteParser.SUM:
             print(izq + der)
             setheading(orientacion + izq + der)
             heading()
             return 0
-        elif ctx.op.type == TerceraParteParser.REST:
+        elif ctx.op.type == CuartaParteParser.REST:
             print(izq - der)
             setheading(orientacion + (izq - der))
             heading()
             return 0
+        return 0
+    
+    def visitSntxRepMov(self, ctx):
+        rep = int(ctx.INT().getText())
+        x = 0
+        while x < rep:
+            self.visit(ctx.movimiento())
+            x += 1
+        return 0
+    
+    def visitSntxRepRot(self, ctx):
+        rep = int(ctx.INT().getText())
+        x = 0
+        while x < rep:
+            self.visit(ctx.rotacion())
+            x += 1
         return 0
     
         
