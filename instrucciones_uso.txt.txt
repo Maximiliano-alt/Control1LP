@@ -1,0 +1,63 @@
+*************** INSTRUCCIONES ***************
+
+* Para todos los comandos a ingresar, se deben de escribir todos en minuscula. Ej: encender, apagar, mover(40), etc. *
+* Considerar X e Y como valores POSITIVOS o NEGATIVOS *
+* Ubicandose en la carpeta de la parte en concreto a utilizar, ingresar el comando 'numero_parte'Parte.py para ejecutar el programa correspondiente. Donde 'numero_parte' corresponde a una de las siguientes opciones:
+
+- primera
+- segunda
+- tercera
+- cuarta
+
+Ejs. primeraParte.py - segundaParte.py - terceraParte.py
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Primera parte:
+
+- encendido -> Preparar el puntero para trazar una linea en el siguiente comando.
+- apagado -> Preparar el puntero para NO trazar una linea en el siguiente comando.
+- mover(X,Y) -> Mover el puntero a una posición (X,Y) en el plano.
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Segunda parte:
+
+- encendido -> Preparar el lapiz para trazar una linea en el siguiente comando.
+- apagado -> Preparar el lapiz para NO trazar una linea en el siguiente comando.
+- rotar(X) -> Rotar la orientación del puntero en X grados
+- mover(X) -> Mover el puntero X puntos en la orientación actual
+- rotar(X,Y) -> Rotar la orientación del puntero a la posición (X,Y) en el plano
+- mover(X,Y) -> Mover el puntero a una posición (X,Y) en el plano.
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Tercera parte:
+
+* Considerar ComX como las expresiones permitidas a utilizar en el tercer comando a continuación. *
+* (expresiones de ComX pueden ser utilizados individualmente como en la parte anterior) 	  *
+
+- encendido -> Preparar el lapiz para trazar una linea en el siguiente comando.
+- apagado -> Preparar el lapiz para NO trazar una linea en el siguiente comando.
+- rotar(ComX +/- ComX) -> Realizar las acciones de cada ComX y rotar su orientación en los grados resultantes de la operación realizada
+	Ej. rotar(mover(45,45) + 90) : El puntero se mueve al punto (45,45) y rota 90 grados en base a su orientación actual
+
+ComX:
+- X -> Valor entero positivo
+- rotar(X) -> Rotar la orientación del puntero en X grados
+- mover(X) -> Mover el puntero X puntos en la orientación actual
+- rotar(X,Y) -> Rotar la orientación del puntero a la posición (X,Y) en el plano
+- mover(X,Y) -> Mover el puntero a una posición (X,Y) en el plano.
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Cuarta parte:
+
+* Considerar "Com" como todos los comandos permitidos desde Primera parte hasta Tercera parte *
+* Es posible poder relizar los comandos de las partes anteriores de manera individual *
+
+- rotar X: Com -> Repetir X veces el comando Com indicado.
+
+
+
+
