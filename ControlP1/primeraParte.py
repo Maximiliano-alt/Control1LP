@@ -11,7 +11,7 @@ if __name__ == '__main__':
         if len(sys.argv) > 1:
             input_stream = FileStream(sys.argv[1])
         else:
-            print("Ingrese coordenadas (x,y,encendido|apagado):")
+            print("Ingresar comandos:")
             input_stream = InputStream(sys.stdin.readline())
         lexer = PrimeraParteLexer(input_stream)
         token_stream = CommonTokenStream(lexer)
