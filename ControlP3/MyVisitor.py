@@ -79,15 +79,18 @@ class MyVisitor(TerceraParteVisitor):
     
     # Logica para la realizacion de la ejecucion de comandos como parametros de rotar()
     def visitSntxRotOp(self, ctx):
-        # Realizacion de los comandos al interior de rotar() y
+        # Realizacion de los comandos al interior de rotar() y almacenado de las salidas de estos
         izq = float(self.visit(ctx.movimiento(0)))
         der = float(self.visit(ctx.movimiento(1)))
         orientacion = heading()
+
+        # Sumado de las salidas de izq y der para la rotacion
         if ctx.op.type == TerceraParteParser.SUM:
             print(izq + der)
             setheading(orientacion + izq + der)
             heading()
             return 0
+        # Resta de las salidas de izq y der para la rotacion
         elif ctx.op.type == TerceraParteParser.REST:
             print(izq - der)
             setheading(orientacion + (izq - der))
