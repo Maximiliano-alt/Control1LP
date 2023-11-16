@@ -14,13 +14,6 @@ puntero: MOV '(' INT (',' INT)? ')' # Mov
        | ROT '(' INT (',' INT)? ')' # Rot
        ;
 
-/*
-puntero: MOV '(' puntero (',' puntero)? ')' # Mov
-       | ROT '(' puntero (',' puntero)? ')' # Rot
-       | INT                                # INT
-       ;
-*/
-
 ENC :     'encendido' ;
 APAG :    'apagado' ;
 MOV:      'mover' ;
