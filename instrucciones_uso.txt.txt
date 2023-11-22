@@ -11,6 +11,13 @@
 
 Ejs. primeraParte.py - segundaParte.py - terceraParte.py
 
+PARA VISUALIZAR EL AST DE UNA DE LAS PARTES INGRESAR EL SIGUIENTE COMANDO POR LA TERMINAL:
+
+Ej. Para la parte 2.
+- antlr4-parse SegundaParte.g4 dibujo -gui
+- Ingresar el comando que se quiere visualizar su AST
+- Ctrl+Z (Windows) o Ctrl+D (Unix)
+
 ------------------------------------------------------------------------------------------------------------------------------------------------
 
 Primera parte:
