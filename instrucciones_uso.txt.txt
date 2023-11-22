@@ -19,6 +19,12 @@ Primera parte:
 - apagado -> Preparar el puntero para NO trazar una linea en el siguiente comando.
 - mover(X,Y) -> Mover el puntero a una posición (X,Y) en el plano.
 
+EJEMPLOS DE INPUTS:
+- encendido
+- apagado
+- mover(45,45)
+- mover(90,0)
+
 ------------------------------------------------------------------------------------------------------------------------------------------------
 
 Segunda parte:
@@ -29,6 +35,11 @@ Segunda parte:
 - mover(X) -> Mover el puntero X puntos en la orientación actual
 - rotar(X,Y) -> Rotar la orientación del puntero a la posición (X,Y) en el plano
 - mover(X,Y) -> Mover el puntero a una posición (X,Y) en el plano.
+
+EJEMPLOS DE INPUTS ADICIONALES:
+- rotar(90)
+- mover(45)
+- rotar(45,45)
 
 ------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -49,6 +60,10 @@ ComX:
 - rotar(X,Y) -> Rotar la orientación del puntero a la posición (X,Y) en el plano
 - mover(X,Y) -> Mover el puntero a una posición (X,Y) en el plano.
 
+EJEMPLOS DE INPUTS ADICIONALES:
+- rotar(mover(45,45) + 90) -> Se mueve al punto (45,45) y rota 90° desde su orientación
+- rotar(-90 + mover(0,0)) -> se mueve al punto (0,0) y rota -90° (270°) desde su orientación
+
 ------------------------------------------------------------------------------------------------------------------------------------------------
 
 Cuarta parte:
@@ -56,7 +71,10 @@ Cuarta parte:
 * Considerar "Com" como todos los comandos permitidos desde Primera parte hasta Tercera parte *
 * Es posible poder relizar los comandos de las partes anteriores de manera individual *
 
-- rotar X: Com -> Repetir X veces el comando Com indicado.
+- repetir X: Com -> Repetir X veces el comando Com indicado.
+
+EJEMPLOS DE INPUTS ADICIONALES:
+- repetir 4: rotar(mover(45) + 90) -> dibujo de un cuadrado
 
 
 
